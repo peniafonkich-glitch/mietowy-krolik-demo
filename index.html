@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cukiernia Miętowy Królik | torty na zamówienie, ciasta i desery, Kraków Kurdwanów</title>
+<meta name="description" content="Makieta strony Cukierni Miętowy Królik: ciasta, torty na zamówienie i desery. Kraków, ul. Wysłouchów 2. Zamówienia: 578 573 303, także WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Miętowy Królik: miętowe pasy z ich okładki, różowe uszy królika, czekoladowy tekst.
+   Układ wzorowany na prostej, czytelnej stronie (jasny opis + przycisk, trzy karty ze zdjęciami, o nas, kontakt),
+   z naszym ruchem: obracający się tort 3D z uszami królika, pasy markizy, karty "zamówień" z bohaterami. */
+:root{
+  --mint:#bfeadb;
+  --mint2:#8fd8bf;
+  --choc:#3b2418;
+  --pink:#f7b6c8;
+  --pink2:#e9779a;
+  --white:#ffffff;
+  --gut:clamp(18px,5vw,64px);
+  --hd:'Fredoka',system-ui,sans-serif;
+  --bd:'Atkinson Hyperlegible','Helvetica Neue',Arial,sans-serif;
+  --fs:17px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--white);scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:var(--bd);font-size:var(--fs);line-height:1.6;color:var(--choc);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.big{--fs:20px}
+body.hc{--mint:#ffffff;--mint2:#000000;--pink:#ffffff;--pink2:#000000;--choc:#000000}
+a{color:inherit;text-underline-offset:4px}
+:focus-visible{outline:3px solid var(--pink2);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--hd);font-weight:700;line-height:1;letter-spacing:-.01em}
+
+/* pasek dostępności */
+.a11y{position:fixed;right:14px;bottom:14px;z-index:50;display:flex;gap:6px}
+.a11y button{font:700 14px var(--bd);min-width:46px;min-height:46px;border-radius:50%;border:2px solid var(--choc);background:var(--white);color:var(--choc);cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.a11y button[aria-pressed=true]{background:var(--choc);color:var(--white)}
+
+/* HERO */
+.awning{height:46px;background:repeating-linear-gradient(90deg,var(--mint2) 0 40px,var(--white) 40px 80px);
+  -webkit-mask:radial-gradient(20px at 20px 100%,transparent 98%,#000) 0 0/40px 100%;mask:radial-gradient(20px at 20px 100%,transparent 98%,#000) 0 0/40px 100%;
+  transform-origin:top;animation:flap 5s ease-in-out infinite}
+@keyframes flap{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.12)}}
+.hero{position:relative;background:var(--mint);overflow:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px var(--gut)}
+.logo{text-decoration:none;font:700 24px var(--hd)}
+.nav ul{list-style:none;display:flex;gap:clamp(14px,2.6vw,30px);font-weight:700;font-size:15px}
+.nav ul a{text-decoration:none}.nav ul a:hover{text-decoration:underline}
+@media(max-width:760px){.nav ul{display:none}}
+.wa{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;background:#1fa855;color:#fff;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+.stage{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:20px;padding:10px var(--gut) 50px}
+.kick{font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--pink2)}
+h1{font-size:clamp(54px,8.2vw,120px);margin-top:8px}
+.lede{font-size:clamp(18px,1.6vw,21px);max-width:34ch;margin-top:14px}
+.cycle{position:relative;height:1.4em;margin-top:12px;font:600 clamp(20px,2.2vw,28px) var(--hd)}
+.cycle span{position:absolute;left:0;opacity:0;animation:show 9s infinite}
+.cycle span:nth-child(2){animation-delay:3s}.cycle span:nth-child(3){animation-delay:6s}
+@keyframes show{0%{opacity:0;transform:translateY(10px)}6%,30%{opacity:1;transform:none}36%,100%{opacity:0;transform:translateY(-10px)}}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;min-height:54px;padding:0 24px;border-radius:999px;border:2px solid var(--choc);font-weight:700;text-decoration:none;background:var(--white)}
+.btn.f{background:var(--choc);color:var(--white)}
+.btn:hover{background:var(--pink2);border-color:var(--pink2);color:#fff}
+.model{position:relative;aspect-ratio:1/1;width:100%;max-width:560px;justify-self:center}
+.disc{position:absolute;inset:12% 12% 10%;border-radius:50%;background:var(--white)}
+.ear{position:absolute;top:2%;width:16%;height:40%;border-radius:50% 50% 45% 45%;background:var(--white);border:6px solid var(--white);
+  box-shadow:inset 0 0 0 14px var(--white),inset 0 0 0 60px var(--pink);transform-origin:50% 100%}
+.ear.l{left:28%;transform:rotate(-12deg);animation:wl 4s ease-in-out infinite}
+.ear.r{right:28%;transform:rotate(12deg);animation:wr 4s ease-in-out infinite .6s}
+@keyframes wl{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(-22deg)}}
+@keyframes wr{0%,100%{transform:rotate(12deg)}50%{transform:rotate(20deg)}}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block}
+.model figcaption{position:absolute;left:0;right:0;bottom:0;text-align:center;font-size:12px;opacity:.75}
+@media(max-width:640px){
+  .stage{grid-template-columns:1fr;gap:0;padding-bottom:30px}
+  .model{max-width:66vw;order:-1;margin:-6px auto 0}
+}
+
+.sec{padding:clamp(64px,10vh,120px) var(--gut)}
+.wrap{max-width:1160px;margin:0 auto}
+.center{text-align:center}
+.sec h2{font-size:clamp(40px,5.6vw,76px)}
+.sec .intro{max-width:56ch;margin:16px auto 0;font-size:18px}
+
+/* CO PIECZEMY: trzy karty ze zdjęciami */
+.offer .cards{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,40px);margin-top:48px}
+@media(max-width:760px){.offer .cards{grid-template-columns:1fr}}
+.offer li{text-align:center}
+.offer img{display:block;width:min(240px,70%);height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;margin:0 auto;border:8px solid var(--mint);transition:transform .4s}
+.offer li:hover img{transform:rotate(-4deg) scale(1.03)}
+.offer h3{font-size:28px;margin-top:18px;color:var(--pink2)}
+.offer p{margin-top:8px;max-width:30ch;margin-left:auto;margin-right:auto}
+.offer small{display:block;margin-top:30px;text-align:center;font-size:13px;opacity:.7}
+
+/* BOHATEROWIE */
+.heroes{background:var(--pink)}
+.tickets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:44px}
+@media(max-width:860px){.tickets{grid-template-columns:1fr}}
+.ticket{position:relative;background:var(--white);border-radius:22px;padding:24px;border:2px dashed var(--choc)}
+.ticket .kick{color:var(--choc);opacity:.7}
+.ticket h3{font-size:30px;margin-top:8px}
+.ticket p{margin-top:8px}
+.ticket.you{background:var(--choc);color:var(--white);border-style:solid;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none}
+.ticket.you .kick{color:var(--pink)}
+.ticket.you span{margin-top:16px;font-weight:700}
+
+/* O NAS */
+.about .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,80px);align-items:center}
+@media(max-width:860px){.about .wrap{grid-template-columns:1fr}}
+.about p{margin-top:16px;font-size:18px;max-width:46ch}
+.share{background:var(--mint);border-radius:26px;padding:clamp(24px,3vw,36px)}
+.share h3{font-size:clamp(26px,3vw,36px)}
+.share p{font-size:17px}
+
+/* GDZIE */
+.where{background:var(--choc);color:var(--white)}
+.where .kick{color:var(--pink)}
+.where .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(30px,6vw,80px)}
+@media(max-width:860px){.where .wrap{grid-template-columns:1fr}}
+dl{display:grid;grid-template-columns:auto 1fr;gap:12px 22px;margin-top:26px}
+dt{font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding-top:4px;color:var(--mint2)}
+dd{font-size:18px}
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.areas span{padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.12);font-size:14px}
+.mapbox{border-radius:24px;overflow:hidden;min-height:400px}
+.mapbox iframe{display:block;width:100%;height:100%;min-height:400px;border:0}
+footer{background:var(--choc);border-top:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.75);padding:28px var(--gut) 80px}
+footer p{max-width:88ch;font-size:13px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.awning,.ear,.cycle span{animation:none}.cycle span:first-child{opacity:1}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="a11y" aria-label="Ułatwienia dostępu">
+  <button type="button" id="aBig" aria-pressed="false" title="Większy tekst">A+</button>
+  <button type="button" id="aHc" aria-pressed="false" title="Wysoki kontrast">◐</button>
+</div>
+
+<header class="hero" id="start">
+  <div class="awning" aria-hidden="true"></div>
+  <nav class="nav" aria-label="Menu">
+    <a class="logo" href="#start">Miętowy Królik</a>
+    <ul><li><a href="#oferta">Oferta</a></li><li><a href="#torty">Torty</a></li><li><a href="#onas">O nas</a></li><li><a href="#kontakt">Kontakt</a></li></ul>
+    <a class="wa" href="https://wa.me/48578573303">WhatsApp</a>
+  </nav>
+  <div class="stage">
+    <div>
+      <div class="kick">Cukiernia · Kraków, Kurdwanów</div>
+      <h1>Miętowy Królik</h1>
+      <p class="lede">Ciasta, torty i różne desery. Torty na zamówienie na urodziny i każdą okazję.</p>
+      <div class="cycle" aria-hidden="true"><span>torty urodzinowe</span><span>ciasta</span><span>desery</span></div>
+      <div class="ctas"><a class="btn f" href="https://wa.me/48578573303?text=Dzie%C5%84%20dobry!%20Chcia%C5%82(a)bym%20zam%C3%B3wi%C4%87%20tort.">Zamów tort na WhatsApp</a><a class="btn" href="#oferta">Zobacz ofertę</a></div>
+    </div>
+    <figure class="model">
+      <div class="ear l" aria-hidden="true"></div><div class="ear r" aria-hidden="true"></div>
+      <div class="disc" aria-hidden="true"></div>
+      <canvas id="cv" role="img" aria-label="Trójwymiarowy dwupiętrowy tort z różami, model wygenerowany komputerowo."></canvas>
+      <figcaption>Tort: model 3D wygenerowany komputerowo.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+<section class="sec offer" id="oferta">
+  <div class="wrap">
+    <div class="center rv"><div class="kick">Co pieczemy</div><h2>Nie tylko torty</h2>
+      <p class="intro">Zajmujemy się wyrobem ciast, tortów i różnych deserów. Odbiór w cukierni na Kurdwanowie.</p></div>
+    <ul class="cards">
+      <li class="rv"><img src="torty.jpg" alt="Dwupiętrowy tort z różami (ilustracja)" width="480" height="480" loading="lazy"><h3>Torty na zamówienie</h3><p>Urodzinowe, z ulubionym bohaterem albo na ważną okazję.</p></li>
+      <li class="rv"><img src="ciasta.jpg" alt="Kawałek sernika z owocami (ilustracja)" width="480" height="480" loading="lazy"><h3>Ciasta</h3><p>Do kawy, na niedzielę i na rodzinne spotkania.</p></li>
+      <li class="rv"><img src="desery.jpg" alt="Musowy deser z malinami (ilustracja)" width="480" height="480" loading="lazy"><h3>Desery</h3><p>Różne desery, także na słodki stół.</p></li>
+    </ul>
+    <small>Zdjęcia poglądowe (wizualizacje 3D). W pełnej wersji pojawią się zdjęcia wypieków Miętowego Królika.</small>
+  </div>
+</section>
+
+<section class="sec heroes" id="torty">
+  <div class="wrap">
+    <div class="center rv"><div class="kick">Ostatnio z naszej pracowni</div><h2>Torty z bohaterami</h2></div>
+    <div class="tickets">
+      <article class="ticket rv"><div class="kick">listopad 2026</div><h3>Fortnite</h3><p>Tort na urodziny Antosia. Kolejny level!</p></article>
+      <article class="ticket rv"><div class="kick">listopad 2026</div><h3>My Little Pony</h3><p>6 lat magii, przyjaźni i tęczy, dla małej solenizantki.</p></article>
+      <a class="ticket you rv" href="https://wa.me/48578573303?text=Dzie%C5%84%20dobry!%20Mam%20pomys%C5%82%20na%20tort%3A%20"><div><div class="kick">Twój pomysł</div><h3>Jaki bohater u Ciebie?</h3><p>Napisz motyw, datę i liczbę osób.</p></div><span>Napisz na WhatsApp →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec about" id="onas">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kick">O nas</div>
+      <h2>Mała cukiernia z Kurdwanowa</h2>
+      <p>Pieczemy ciasta, torty i desery w Krakowie. Każdy tort na zamówienie robimy pod konkretną okazję i konkretnego solenizanta.</p>
+    </div>
+    <div class="share rv">
+      <h3>Dzielimy się słodyczami</h3>
+      <p>Część naszych wypieków chcemy bezpłatnie przekazywać na cele charytatywne. Jeśli znasz fundację albo grupę wolontariuszy, która mogłaby z tego skorzystać, napisz do nas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec where" id="kontakt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kick">Kontakt</div>
+      <h2>Wysłouchów 2</h2>
+      <dl>
+        <dt>Adres</dt><dd>ul. Wysłouchów 2, 30-611 Kraków</dd>
+        <dt>Telefon</dt><dd><a href="tel:+48578573303">578 573 303</a> (także WhatsApp)</dd>
+        <dt>E-mail</dt><dd><a href="mailto:mmietowykrolik@gmail.com">mmietowykrolik@gmail.com</a></dd>
+        <dt>Social</dt><dd><a href="https://www.facebook.com/mietowykrolik.cukiernia" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/mietowykrolik/" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@mietowykrolik" rel="noopener">TikTok</a></dd>
+        <dt>Opinie</dt><dd>98% poleca, 38 opinii na Facebooku</dd>
+      </dl>
+      <div class="areas" aria-label="Okolice"><span>Kurdwanów</span><span>Wola Duchacka</span><span>Łagiewniki</span><span>Podgórze</span><span>Bieżanów</span><span>Kazimierz</span><span>Skawina</span><span>Wieliczka</span></div>
+    </div>
+    <div class="mapbox rv"><iframe title="Mapa: Cukiernia Miętowy Królik, Wysłouchów 2, Kraków" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=19.9410%2C50.0045%2C19.9575%2C50.0115&amp;layer=mapnik&amp;marker=50.0080308%2C19.9491987"></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>To makieta nowej strony. Nie ma na niej zdjęć wypieków cukierni: tort na ekranie i zdjęcia w kartach to wizualizacje 3D wygenerowane komputerowo. W pełnej wersji pojawią się prawdziwe zdjęcia, cennik i godziny otwarcia, za zgodą właścicieli. Opis, adres, kontakt, okolice i przykłady tortów pochodzą z facebookowej strony Cukierni Miętowy Królik.</p>
+</footer>
+
+<script>
+(function(){
+function tog(id,cls){var b=document.getElementById(id);b.addEventListener('click',function(){var on=document.body.classList.toggle(cls);b.setAttribute('aria-pressed',on)})}
+tog('aBig','big');tog('aHc','hc');
+var els=document.querySelectorAll('.rv');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+<script defer>
+addEventListener('DOMContentLoaded',function(){
+var cv=document.getElementById('cv');if(!window.THREE||!THREE.GLTFLoader){cv.remove();return}
+try{var R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){cv.remove();return}
+R.setPixelRatio(Math.min(devicePixelRatio||1,2));R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.05;
+var S=new THREE.Scene(),cam=new THREE.PerspectiveCamera(30,1,.1,50);cam.position.set(0,1.5,6.2);cam.lookAt(0,-.1,0);
+S.add(new THREE.HemisphereLight(0xffffff,0x6a8a7a,.9));
+var k=new THREE.DirectionalLight(0xffffff,1.5);k.position.set(-3,5,4);S.add(k);
+var r=new THREE.DirectionalLight(0xffe0ea,1);r.position.set(4,2,-3);S.add(r);
+var piv=new THREE.Group();S.add(piv);
+new THREE.GLTFLoader().load('tort.glb',function(g){var o=g.scene,b=new THREE.Box3().setFromObject(o),s=b.getSize(new THREE.Vector3()),c=b.getCenter(new THREE.Vector3()),sc=2.3/Math.max(s.x,s.y,s.z);o.scale.setScalar(sc);o.position.set(-c.x*sc,-c.y*sc-.15,-c.z*sc);piv.add(o)});
+function fit(){var w=cv.clientWidth,h=cv.clientHeight;if(!w)return;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+fit();addEventListener('resize',fit);
+var vis=true;new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
+var still=matchMedia('(prefers-reduced-motion: reduce)').matches,t0=performance.now();
+(function loop(now){requestAnimationFrame(loop);if(!vis)return;var t=(now-t0)/1000;
+ piv.rotation.y=still?.6:t*.45;piv.position.y=still?0:Math.sin(t*1.3)*.06;R.render(S,cam)})(t0);
+});
+</script>
+<script data-goatcounter="https://penia-demo.goatcounter.com/count" data-goatcounter-settings='{"path":"mietowy-krolik"}' async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
